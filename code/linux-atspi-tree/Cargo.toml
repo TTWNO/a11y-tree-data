@@ -1,0 +1,10 @@
+[package]
+name = "linux-atspi-tree"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+atspi = { version = "0.24.0", features = ["atspi-connection", "atspi-proxies", "tokio", "zbus"] }
+serde = "1.0.215"
+serde_json = "1.0.133"
+tokio = { version = "1.41.1", features = ["macros", "rt-multi-thread"] }
