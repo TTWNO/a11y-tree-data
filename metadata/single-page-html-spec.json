@@ -1,0 +1,11 @@
+{
+	"name": "Tait Hoyem",
+	"os": "Linux",
+	"date": "23-11-2024",
+	"applications": [
+		{
+			"name": "Firefox",
+			"pages": ["https://html.spec.whatwg.org/"]
+		}
+	]
+}
