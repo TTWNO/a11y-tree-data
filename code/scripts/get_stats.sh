@@ -4,6 +4,13 @@ max_depth=$(jq 'def max_depth: if type == "object" or type == "array" then (map(
 max_children=$(jq '[ recurse(.children[]?) | .children | length ] | max' < "$1")
 roles=($(jq '[ recurse(.children[]?) | .role ] | unique | .[]' < "$1" | tr -d '\n' | tr '""' ' ' | tr -d '"'))
 unique_roles=$(jq '[ recurse(.children[]?) | .role ] | unique | length' < "$1")
+children_all=$(jq '[ recurse(.children[]?) | .children | length]' < "$1")
+for i in $(seq 0 20); do
+	two_or_less=$(echo "$children_all" | jq "[select(.[] <= $i)] | length")
+	more_than_two=$(echo "$children_all" | jq "[select(.[] > $i)] | length")
+	echo "> than $i: $more_than_two"
+	echo "<= than $i: $two_or_less"
+done
 declare -a each_role
 for role in "${roles[@]}"; do
 	echo "$role"
