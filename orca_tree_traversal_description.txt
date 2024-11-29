@@ -1,0 +1,549 @@
+vvvvv PROCESS OBJECT EVENT object:state-changed:focused (queue size: 3) vvvvv
+16:58:38.246080 - EVENT MANAGER: object:state-changed:focused for [list item] in [application: 'fractal'] (1, 0, 0) is not obsoleted
+16:58:38.246116 - OBJECT EVENT: object:state-changed:focused for [list item] in [application: 'fractal'] (1, 0, 0)
+                                app='fractal (GTK 4.16.5)' name='' role='list item'
+                                description=''
+                                states='focusable, focused, sensitive, showing, visible, has-popup'
+                                relations=''
+                                actions='event-view-details (<VoidSymbol>); context-menu-close (<VoidSymbol>); event-permalink (<VoidSymbol>); event-report (<VoidSymbol>); event-copy-text (<VoidSymbol>); context-menu-activate (<VoidSymbol>); event-reply (<VoidSymbol>)'
+                                interfaces='Action, Component'
+                                attributes='toolkit:GTK'
+                                text=''
+                                path=[-1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+
+16:58:38.249130 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) orca.start > event_manager._dequeue_object_event > event_manager._process_object_event > script_manager.get_active_script
+16:58:38.249585 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.249613 - EVENT MANAGER: Getting script for event for [application: 'fractal'] [list item]
+16:58:38.249627 - SCRIPT MANAGER: Getting script for [application: 'fractal'] [list item]
+16:58:38.249645 - SCRIPT MANAGER: Script is toolkit script fractal (module=orca.scripts.toolkits.gtk.script)
+16:58:38.249659 - EVENT MANAGER: Script for event is fractal (module=orca.scripts.toolkits.gtk.script)
+16:58:38.249663 - EVENT MANAGER: Processing object:state-changed:focused: script for event is active
+16:58:38.249677 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.250586 - SCRIPT UTILITIES: [frame: 'Fractal'] is top-level object for: [list item]
+16:58:38.251028 - SCRIPT UTILITIES: [list item] is in frame [frame: 'Fractal'] and dialog None
+16:58:38.251050 - AXObject: Clearing AT-SPI cache on [frame: 'Fractal'] Recursive: False. Reason: Checking if window can be the active window
+16:58:38.251944 - FOCUS MANAGER: [frame: 'Fractal'] from [application: 'fractal'] can be active window
+16:58:38.251974 - FOCUS MANAGER: Request to set locus of focus to [list item] event_manager._process_object_event > script.on_focused_changed > default.on_focused_changed > focus_manager.set_locus_of_focus
+16:58:38.252516 - AXObject: Clearing AT-SPI cache on [list item] Recursive: False. Reason: Setting locus of focus.
+16:58:38.252530 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) script.on_focused_changed > default.on_focused_changed > focus_manager.set_locus_of_focus > script_manager.get_active_script
+16:58:38.254846 - FOCUS MANAGER: Changing locus of focus from [list item] to [list item]. Notify: True
+16:58:38.255074 - FOCUS MANAGER: Region of interest: [list item] (0, 0)
+16:58:38.255314 - FOCUS MANAGER: Switching object of interest from [list item] to [list item]
+16:58:38.256534 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.257600 - SCRIPT UTILITIES: [frame: 'Fractal'] is top-level object for: [list item]
+16:58:38.257805 - SCRIPT UTILITIES: [list item] is top-level object: False
+16:58:38.257847 - INPUT EVENT MANAGER: Last event was undo: False
+16:58:38.257862 - INPUT EVENT MANAGER: Last event was redo: False
+16:58:38.258056 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.259113 - SCRIPT UTILITIES: [frame: 'Fractal'] is top-level object for: [list item]
+16:58:38.259310 - SCRIPT UTILITIES: [list item] is top-level object: False
+16:58:38.259335 - INPUT EVENT MANAGER: Last event was paste: False
+16:58:38.259971 - SCRIPT UTILITIES: [frame: 'Fractal'] is top-level object for: [list item]
+16:58:38.259989 - FOCUS MANAGER: Request to set active window to [frame: 'Fractal']
+16:58:38.259993 - FOCUS MANAGER: Setting active window to existing active window
+16:58:38.260409 - SCRIPT MANAGER: Getting script for [application: 'fractal'] [list item]
+16:58:38.260433 - SCRIPT MANAGER: Script is toolkit script fractal (module=orca.scripts.toolkits.gtk.script)
+16:58:38.260450 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.260495 - BRAILLE GENERATOR: BrailleGenerator._generate_list_item for [list item] args: {'formatType': 'focused'}
+16:58:38.260516 - GENERATOR: _generate_text_substring: []
+16:58:38.260528 - TABLE NAVIGATOR: Last navigation event (None) was last key event: False
+16:58:38.260546 - TABLE NAVIGATOR: Last navigation event (None) was last key event: False
+16:58:38.260714 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.260738 - SCRIPT UTILITIES: [list item] is deemed to be layout only
+16:58:38.260764 - GTK: [log] is deemed to be layout only
+16:58:38.260784 - GTK: [panel] is deemed to be layout only
+16:58:38.260803 - GTK: [scroll pane] is deemed to be layout only
+16:58:38.260820 - GTK: [panel] is deemed to be layout only
+16:58:38.260836 - GTK: [panel] is deemed to be layout only
+16:58:38.260852 - GTK: [panel] is deemed to be layout only
+16:58:38.260895 - BRAILLE GENERATOR: BrailleGenerator._generate_panel for [panel: 'Room History'] args: {'formatType': 'focused', 'includeContext': 'False'}
+16:58:38.260912 - GENERATOR: _generate_text_substring: []
+16:58:38.260927 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.261160 - AXUtilitiesRelation: [panel: 'Room History'] is labelled by: []
+16:58:38.261176 - GENERATOR: _generate_accessible_label: []
+16:58:38.261191 - GENERATOR: _generate_accessible_name: [Room History]
+16:58:38.261202 - GENERATOR: _generate_accessible_label_and_name: [Room History]
+16:58:38.261363 - BRAILLE GENERATOR: _generate_accessible_role: [panel]
+16:58:38.261379 - BRAILLE: Not contracting 'Room History panel' because contracted braille is not enabled.
+16:58:38.261405 - AXUtilitiesRelation: [panel: 'Room History'] is described by: []
+16:58:38.261432 - GENERATOR: _generate_accessible_description: []
+16:58:38.261446 - BRAILLE GENERATOR: Results: [COMPONENT: 'Room History panel', cursor offset:0]
+16:58:38.261471 - GTK: [grouping] is deemed to be layout only
+16:58:38.261491 - GTK: [panel] is deemed to be layout only
+16:58:38.261509 - GTK: [grouping] is deemed to be layout only
+16:58:38.261527 - GTK: [grouping] is deemed to be layout only
+16:58:38.261567 - BRAILLE GENERATOR: BrailleGenerator._generate_panel for [panel: 'Room History'] args: {'formatType': 'focused', 'includeContext': 'False'}
+16:58:38.261583 - GENERATOR: _generate_text_substring: []
+16:58:38.261595 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.261738 - AXUtilitiesRelation: [panel: 'Room History'] is labelled by: []
+16:58:38.261753 - GENERATOR: _generate_accessible_label: []
+16:58:38.261765 - GENERATOR: _generate_accessible_name: [Room History]
+16:58:38.261776 - GENERATOR: _generate_accessible_label_and_name: [Room History]
+16:58:38.261916 - BRAILLE GENERATOR: _generate_accessible_role: [panel]
+16:58:38.261928 - BRAILLE: Not contracting 'Room History panel' because contracted braille is not enabled.
+16:58:38.261949 - AXUtilitiesRelation: [panel: 'Room History'] is described by: []
+16:58:38.261958 - GENERATOR: _generate_accessible_description: []
+16:58:38.261969 - BRAILLE GENERATOR: Results: [COMPONENT: 'Room History panel', cursor offset:0]
+16:58:38.261996 - GTK: [grouping] is deemed to be layout only
+16:58:38.262018 - BRAILLE GENERATOR: [grouping: 'Main Content'] lacks dedicated generator
+16:58:38.262048 - BRAILLE GENERATOR: BrailleGenerator._generate_default_presentation for [grouping: 'Main Content'] args: {'formatType': 'focused', 'includeContext': 'False'}
+16:58:38.262063 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.262198 - AXUtilitiesRelation: [grouping: 'Main Content'] is labelled by: []
+16:58:38.262212 - GENERATOR: _generate_accessible_label: []
+16:58:38.262224 - GENERATOR: _generate_accessible_name: [Main Content]
+16:58:38.262235 - GENERATOR: _generate_accessible_label_and_name: [Main Content]
+16:58:38.262251 - GENERATOR: _generate_text_substring: []
+16:58:38.262263 - GENERATOR: _generate_text_content: []
+16:58:38.262390 - GENERATOR: _generate_value: []
+16:58:38.262428 - BRAILLE GENERATOR: _generate_accessible_role: [grouping]
+16:58:38.262445 - GENERATOR: _generate_state_required: []
+16:58:38.262457 - GENERATOR: _generate_state_invalid: []
+16:58:38.262464 - BRAILLE: Not contracting 'Main Content grouping' because contracted braille is not enabled.
+16:58:38.262483 - AXUtilitiesRelation: [grouping: 'Main Content'] is described by: []
+16:58:38.262491 - GENERATOR: _generate_accessible_description: []
+16:58:38.262502 - BRAILLE GENERATOR: Results: [COMPONENT: 'Main Content grouping', cursor offset:0]
+16:58:38.262525 - GTK: [panel] is deemed to be layout only
+16:58:38.262544 - GTK: [grouping] is deemed to be layout only
+16:58:38.262561 - GTK: [panel] is deemed to be layout only
+16:58:38.262578 - GTK: [panel] is deemed to be layout only
+16:58:38.262594 - GTK: [grouping] is deemed to be layout only
+16:58:38.262609 - GTK: [panel] is deemed to be layout only
+16:58:38.262653 - BRAILLE GENERATOR: BrailleGenerator._generate_panel for [panel: 'Session'] args: {'formatType': 'focused', 'includeContext': 'False'}
+16:58:38.262670 - GENERATOR: _generate_text_substring: []
+16:58:38.262683 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.262816 - AXUtilitiesRelation: [panel: 'Session'] is labelled by: []
+16:58:38.262831 - GENERATOR: _generate_accessible_label: []
+16:58:38.262842 - GENERATOR: _generate_accessible_name: [Session]
+16:58:38.262852 - GENERATOR: _generate_accessible_label_and_name: [Session]
+16:58:38.263005 - BRAILLE GENERATOR: _generate_accessible_role: [panel]
+16:58:38.263021 - BRAILLE: Not contracting 'Session panel' because contracted braille is not enabled.
+16:58:38.263049 - AXUtilitiesRelation: [panel: 'Session'] is described by: []
+16:58:38.263061 - GENERATOR: _generate_accessible_description: []
+16:58:38.263074 - BRAILLE GENERATOR: Results: [COMPONENT: 'Session panel', cursor offset:0]
+16:58:38.263107 - GTK: [grouping] is deemed to be layout only
+16:58:38.263130 - GTK: [grouping] is deemed to be layout only
+16:58:38.263152 - GTK: [panel] is deemed to be layout only
+16:58:38.263172 - GTK: [panel] is deemed to be layout only
+16:58:38.263191 - GTK: [panel] is deemed to be layout only
+16:58:38.263442 - BRAILLE GENERATOR: BrailleGenerator._generate_frame for [frame: 'Fractal'] args: {'formatType': 'focused', 'includeContext': 'False'}
+16:58:38.263464 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.263589 - AXUtilitiesRelation: [frame: 'Fractal'] is labelled by: []
+16:58:38.263604 - GENERATOR: _generate_accessible_label: []
+16:58:38.263618 - GENERATOR: _generate_accessible_name: [Fractal]
+16:58:38.263631 - GENERATOR: _generate_accessible_label_and_name: [Fractal]
+16:58:38.263867 - BRAILLE GENERATOR: _generate_accessible_role: [frame]
+16:58:38.263910 - SCRIPT UTILITIES: [frame: 'Fractal'] is top-level object for: [frame: 'Fractal']
+16:58:38.264193 - BRAILLE GENERATOR: _generate_alert_and_dialog_count: []
+16:58:38.264204 - BRAILLE: Not contracting 'Fractal frame' because contracted braille is not enabled.
+16:58:38.264309 - AXUtilitiesRelation: [frame: 'Fractal'] is described by: []
+16:58:38.264321 - GENERATOR: _generate_accessible_description: []
+16:58:38.264332 - BRAILLE GENERATOR: Results: [COMPONENT: 'Fractal frame', cursor offset:0]
+16:58:38.264358 - BRAILLE GENERATOR: [application: 'fractal'] lacks dedicated generator
+16:58:38.264388 - BRAILLE GENERATOR: BrailleGenerator._generate_default_presentation for [application: 'fractal'] args: {'formatType': 'focused', 'includeContext': 'False'}
+16:58:38.264402 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.264509 - AXUtilitiesRelation: [application: 'fractal'] is labelled by: []
+16:58:38.264521 - GENERATOR: _generate_accessible_label: []
+16:58:38.264532 - GENERATOR: _generate_accessible_name: [fractal]
+16:58:38.264541 - GENERATOR: _generate_accessible_label_and_name: [fractal]
+16:58:38.264555 - GENERATOR: _generate_text_substring: []
+16:58:38.264566 - GENERATOR: _generate_text_content: []
+16:58:38.264669 - GENERATOR: _generate_value: []
+16:58:38.264704 - BRAILLE GENERATOR: _generate_accessible_role: [application]
+16:58:38.264718 - GENERATOR: _generate_state_required: []
+16:58:38.264727 - GENERATOR: _generate_state_invalid: []
+16:58:38.264734 - BRAILLE: Not contracting 'fractal application' because contracted braille is not enabled.
+16:58:38.264769 - SCRIPT UTILITIES: Similarity between 'fractal', 'Fractal': 1.0 (threshold: 0.7)
+16:58:38.264780 - GENERATOR: _generate_accessible_description: []
+16:58:38.264791 - BRAILLE GENERATOR: Results: [COMPONENT: 'fractal application', cursor offset:0]
+16:58:38.264827 - BRAILLE GENERATOR: _generate_ancestors: [COMPONENT: 'fractal application', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Fractal frame', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Session panel', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Main Content grouping', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Room History panel', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Room History panel', cursor offset:0]
+16:58:38.264842 - GENERATOR: _generate_text_substring: []
+16:58:38.264953 - GENERATOR: _generate_text_line: []
+16:58:38.264969 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.264985 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.264993 - GENERATOR: _generate_accessible_label: []
+16:58:38.265010 - GENERATOR: _generate_accessible_name: []
+16:58:38.265019 - GENERATOR: _generate_accessible_label_and_name: []
+16:58:38.265037 - GENERATOR: _generate_state_expanded: []
+16:58:38.265565 - GENERATOR: _get_nesting_level: 0
+16:58:38.265577 - GENERATOR: _generate_nesting_level: []
+16:58:38.265817 - AXComponent: [list item] is off-screen: False
+16:58:38.266823 - AXComponent: [panel] is off-screen: False
+16:58:38.267048 - AXComponent: The intersection of (x:731, y:52, width:722, height:60) and (x:731, y:52, width:738, height:64) is: (x:731, y:52, width:722, height:60)
+16:58:38.268028 - AXComponent: [panel] is off-screen: False
+16:58:38.268200 - AXComponent: The intersection of (x:731, y:52, width:722, height:60) and (x:731, y:52, width:738, height:64) is: (x:731, y:52, width:722, height:60)
+16:58:38.269486 - AXComponent: [toggle button: 'bgt lover’s avatar'] is off-screen: False
+16:58:38.269651 - AXComponent: The intersection of (x:731, y:52, width:42, height:42) and (x:731, y:52, width:738, height:64) is: (x:731, y:52, width:42, height:42)
+16:58:38.270377 - AXComponent: [panel] is off-screen: False
+16:58:38.270552 - AXComponent: The intersection of (x:785, y:52, width:668, height:19) and (x:731, y:52, width:738, height:64) is: (x:785, y:52, width:668, height:19)
+16:58:38.271713 - AXComponent: [label: 'bgt lover'] is off-screen: False
+16:58:38.271888 - AXComponent: The intersection of (x:785, y:52, width:60, height:19) and (x:731, y:52, width:738, height:64) is: (x:785, y:52, width:60, height:19)
+16:58:38.272136 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.272260 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.273209 - AXComponent: [label: 'Sent at 12∶02 PM'] is off-screen: False
+16:58:38.273382 - AXComponent: The intersection of (x:1405, y:52, width:48, height:19) and (x:731, y:52, width:738, height:64) is: (x:1405, y:52, width:48, height:19)
+16:58:38.273645 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.273795 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.274666 - AXComponent: [panel] is off-screen: False
+16:58:38.274850 - AXComponent: The intersection of (x:785, y:74, width:656, height:38) and (x:731, y:52, width:738, height:64) is: (x:785, y:74, width:656, height:38)
+16:58:38.275810 - AXComponent: [panel] is off-screen: False
+16:58:38.275981 - AXComponent: The intersection of (x:785, y:74, width:656, height:38) and (x:731, y:52, width:738, height:64) is: (x:785, y:74, width:656, height:38)
+16:58:38.276935 - AXComponent: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] is off-screen: False
+16:58:38.277105 - AXComponent: The intersection of (x:785, y:74, width:656, height:38) and (x:731, y:52, width:738, height:64) is: (x:785, y:74, width:656, height:38)
+16:58:38.277317 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.277424 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.278275 - AXComponent: Treating sizeless [panel] as onscreen
+16:58:38.278444 - AXComponent: The intersection of (x:785, y:112, width:668, height:0) and (x:731, y:52, width:738, height:64) is: (x:785, y:112, width:668, height:0)
+16:58:38.279474 - AXComponent: Treating [table] as offscreen due to size and no children
+16:58:38.279547 - BRAILLE GENERATOR: BrailleGenerator._generate_toggle_button for [toggle button: 'bgt lover’s avatar'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.279567 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.279679 - AXUtilitiesRelation: [toggle button: 'bgt lover’s avatar'] is labelled by: []
+16:58:38.279693 - GENERATOR: _generate_accessible_label: []
+16:58:38.279707 - GENERATOR: _generate_accessible_name: [bgt lover’s avatar]
+16:58:38.279719 - GENERATOR: _generate_accessible_label_and_name: [bgt lover’s avatar]
+16:58:38.279738 - GENERATOR: _generate_state_expanded: []
+16:58:38.279945 - BRAILLE GENERATOR: _generate_accessible_role: [toggle button]
+16:58:38.279971 - GENERATOR: _generate_state_pressed: [& y]
+16:58:38.279979 - BRAILLE: Not contracting 'bgt lover’s avatar toggle button' because contracted braille is not enabled.
+16:58:38.279990 - GENERATOR: _generate_accessible_description: []
+16:58:38.280004 - BRAILLE GENERATOR: Results: [COMPONENT: '& y bgt lover’s avatar toggle button', cursor offset:0]
+16:58:38.280122 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.280224 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.280243 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.280257 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.280293 - BRAILLE GENERATOR: BrailleGenerator._generate_label for [label: 'bgt lover'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.280309 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.280414 - AXUtilitiesRelation: [label: 'bgt lover'] is labelled by: []
+16:58:38.280427 - GENERATOR: _generate_accessible_label: []
+16:58:38.280439 - GENERATOR: _generate_accessible_name: [bgt lover]
+16:58:38.280449 - GENERATOR: _generate_accessible_label_and_name: [bgt lover]
+16:58:38.280551 - BRAILLE GENERATOR: _generate_eol: []
+16:58:38.280571 - BRAILLE: Creating text region for [label: 'bgt lover'] label:'bgt lover', offsets: None-None, caret: None
+16:58:38.280681 - AXText: [label: 'bgt lover'] reports caret offset of 9.
+16:58:38.280784 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.280912 - AXText: Line at offset 8 in [label: 'bgt lover'] 'bgt lover' (0-9)
+16:58:38.280928 - BRAILLE: Not contracting 'bgt lover bgt lover' because contracted braille is not enabled.
+16:58:38.280944 - GENERATOR: _generate_state_invalid: []
+16:58:38.280957 - GENERATOR: _generate_state_required: []
+16:58:38.280975 - GENERATOR: _generate_state_read_only: []
+16:58:38.280983 - GENERATOR: _generate_accessible_description: []
+16:58:38.280996 - BRAILLE GENERATOR: Results: [TEXT: 'bgt lover bgt lover', cursor offset:19 start offset:0, line offset:0]
+16:58:38.281112 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.281218 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.281237 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.281250 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.281288 - BRAILLE GENERATOR: BrailleGenerator._generate_label for [label: 'Sent at 12∶02 PM'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.281303 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.281414 - AXUtilitiesRelation: [label: 'Sent at 12∶02 PM'] is labelled by: []
+16:58:38.281427 - GENERATOR: _generate_accessible_label: []
+16:58:38.281440 - GENERATOR: _generate_accessible_name: [Sent at 12∶02 PM]
+16:58:38.281451 - GENERATOR: _generate_accessible_label_and_name: [Sent at 12∶02 PM]
+16:58:38.281556 - BRAILLE GENERATOR: _generate_eol: []
+16:58:38.281578 - BRAILLE: Creating text region for [label: 'Sent at 12∶02 PM'] label:'Sent at 12∶02 PM', offsets: None-None, caret: None
+16:58:38.281688 - AXText: [label: 'Sent at 12∶02 PM'] reports caret offset of 0.
+16:58:38.281796 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.281920 - AXText: Line at offset 0 in [label: 'Sent at 12∶02 PM'] '12∶02 PM' (0-8)
+16:58:38.281934 - BRAILLE: Not contracting 'Sent at 12∶02 PM 12∶02 PM' because contracted braille is not enabled.
+16:58:38.281951 - GENERATOR: _generate_state_invalid: []
+16:58:38.281965 - GENERATOR: _generate_state_required: []
+16:58:38.281980 - GENERATOR: _generate_state_read_only: []
+16:58:38.281988 - GENERATOR: _generate_accessible_description: []
+16:58:38.282002 - BRAILLE GENERATOR: Results: [TEXT: 'Sent at 12∶02 PM 12∶02 PM', cursor offset:17 start offset:0, line offset:0]
+16:58:38.282120 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.282224 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.282242 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.282255 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.282310 - BRAILLE GENERATOR: BrailleGenerator._generate_label for [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.282326 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.282436 - AXUtilitiesRelation: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] is labelled by: []
+16:58:38.282449 - GENERATOR: _generate_accessible_label: []
+16:58:38.282463 - GENERATOR: _generate_accessible_name: [it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...)]
+16:58:38.282476 - GENERATOR: _generate_accessible_label_and_name: [it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...)]
+16:58:38.282578 - BRAILLE GENERATOR: _generate_eol: []
+16:58:38.282600 - BRAILLE: Creating text region for [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] label:'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.fla (...)
+16:58:38.282711 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports caret offset of 0.
+16:58:38.282817 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.282942 - AXText: Line at offset 0 in [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.282956 - BRAILLE: Not contracting 'it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map this.name().await.ok() it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map ' because contracted braille is not enabled.
+16:58:38.282972 - GENERATOR: _generate_state_invalid: []
+16:58:38.282985 - GENERATOR: _generate_state_required: []
+16:58:38.283000 - GENERATOR: _generate_state_read_only: []
+16:58:38.283008 - GENERATOR: _generate_accessible_description: []
+16:58:38.283025 - BRAILLE GENERATOR: Results: [TEXT: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok() it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map ', cursor offset:122 start offset:0, line offset:0]
+16:58:38.283067 - GENERATOR: _generate_descendants: [COMPONENT: '& y bgt lover’s avatar toggle button', cursor offset:0, REGION: ' ', cursor offset:0, TEXT: 'bgt lover bgt lover', cursor offset:19 start offset:0, line offset:0, REGION: ' ', cursor offset:0, TEXT: 'Sent at 12∶02 PM 12∶02 PM', cursor offset:17 start offset:0, line offset:0, REGION: ' ', cursor offset:0, TEXT: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok() it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map ', cursor offset:122 start offset:0, line offset:0, REGION: ' ', cursor offset:0]
+16:58:38.283133 - BRAILLE GENERATOR: Results: [COMPONENT: 'fractal application', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Fractal frame', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Session panel', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Main Content grouping', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Room History panel', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: 'Room History panel', cursor offset:0, REGION: ' ', cursor offset:0, COMPONENT: '', cursor offset:0, COMPONENT: '& y bgt lover’s avatar toggle button', cursor offset:0, REGION: ' ', cursor offset:0, TEXT: 'bgt lover bgt lover', cursor offset:19 start offset:0, line offset:0, REGION: ' ', cursor offset:0, TEXT: 'Sent at 12∶02 PM 12∶02 PM', cursor offset:17 start offset:0, line offset:0, REGION: ' ', cursor offset:0, TEXT: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok() it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map ', cursor offset:122 start offset:0, line offset:0, REGION: ' ', cursor offset:0]
+16:58:38.283265 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.283369 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.283382 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille.setFocus > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.284244 - AXHypertext: 0 hyperlinks found in [label: 'bgt lover']
+16:58:38.284411 - AXText: [label: 'bgt lover'] reports 0 selection(s).
+16:58:38.284564 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.284707 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.284723 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille.setFocus > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.285435 - AXHypertext: 0 hyperlinks found in [label: 'Sent at 12∶02 PM']
+16:58:38.285558 - AXText: [label: 'Sent at 12∶02 PM'] reports 0 selection(s).
+16:58:38.285711 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.285867 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.285884 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille.setFocus > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.286598 - AXHypertext: 0 hyperlinks found in [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()']
+16:58:38.286749 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 0 selection(s).
+16:58:38.286794 - BRAILLE: Refresh. Pan: True target: 0
+16:58:38.286800 - BRAILLE: Kill flash message default.update_braille > default.refreshBraille > braille.refresh > braille.killFlash
+16:58:38.287468 - BRAILLE: Last text object: None (Caret: 0, Line: 0, Cell: 0)
+16:58:38.287482 - BRAILLE: Current text object: None (Caret: 0, Line: 0). On same line: False
+16:58:38.287636 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.287776 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.287793 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille.refresh > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.288557 - AXHypertext: 0 hyperlinks found in [label: 'bgt lover']
+16:58:38.288691 - AXText: [label: 'bgt lover'] reports 0 selection(s).
+16:58:38.288842 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.288979 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.288996 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille.refresh > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.289780 - AXHypertext: 0 hyperlinks found in [label: 'Sent at 12∶02 PM']
+16:58:38.289916 - AXText: [label: 'Sent at 12∶02 PM'] reports 0 selection(s).
+16:58:38.290063 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.290219 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.290236 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille.refresh > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.291011 - AXHypertext: 0 hyperlinks found in [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()']
+16:58:38.291146 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 0 selection(s).
+16:58:38.291188 - BRAILLE: Line 0: 'fractal application Fractal frame Session panel Main Content grouping Room History panel Room History panel & y bgt lover’s avatar toggle button bgt lover bgt lover Sent at 12∶02 PM 12∶02 PM it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map this.name().await.ok() it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map  ' focusOffset: 108 [[0, 28], [28, 53], [53, 83], [83, 108], [108, 138], [138, 170], [170, 196], [196, 221], [221, 229], [229, 261], [261, 290], [290, 318], [318, 343], [343, 351], [351, 383], [383, 413]]
+16:58:38.291195 - BRAILLE: Cursor offset in line string is: 108
+16:58:38.291336 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.291468 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.291484 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille._getRangeForOffset > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.292310 - AXHypertext: 0 hyperlinks found in [label: 'bgt lover']
+16:58:38.292443 - AXText: [label: 'bgt lover'] reports 0 selection(s).
+16:58:38.292586 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.292729 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.292746 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille._getRangeForOffset > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.293565 - AXHypertext: 0 hyperlinks found in [label: 'Sent at 12∶02 PM']
+16:58:38.293702 - AXText: [label: 'Sent at 12∶02 PM'] reports 0 selection(s).
+16:58:38.293848 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.293986 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.294002 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) braille._getRangeForOffset > braille.getLineInfo > braille.getAttributeMask > script_manager.get_active_script
+16:58:38.294918 - AXHypertext: 0 hyperlinks found in [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()']
+16:58:38.295061 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 0 selection(s).
+16:58:38.295099 - BRAILLE: Adjusting offset to 108 (unhandled condition)
+16:58:38.295105 - BRAILLE: Current range: (108, 140). Target cell: 0
+16:58:38.295110 - BRAILLE LINE:  'fractal application Fractal frame Session panel Main Content grouping Room History panel Room History panel & y bgt lover’s avatar toggle button bgt lover bgt lover Sent at 12∶02 PM 12∶02 PM it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map this.name().await.ok() it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map  '
+16:58:38.295163 -      VISIBLE:  '& y bgt lover’s avatar toggle bu', cursor=1
+16:58:38.295193 - BRAILLE: Enabling braille. BrlAPI running: False
+16:58:38.295197 - BRAILLE: Need to initialize first.
+16:58:38.295207 - BRAILLE: Initializing. Callback: InputEventManager.process_braille_event
+16:58:38.295220 - BRAILLE: WINDOWPATH= None
+16:58:38.295229 - BRAILLE: XDG_VTNR= 1
+16:58:38.295232 - BRAILLE: Attempting connection with BrlAPI.
+16:58:38.295355 - WARNING: Braille initialization failed: couldn't connect to b':0' with key b'keyfile:/etc/brlapi.key+polkit': connect: No such file or directory
+                  (brlerrno 11, libcerrno 2, gaierrno 0)
+                  Is BRLTTY really running?
+16:58:38.295409 - SPEECH GENERATOR: SpeechGenerator._generate_list_item for [list item] args: {'formatType': 'unfocused', 'priorObj': '[list item]'}
+16:58:38.295430 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.296407 - SCRIPT UTILITIES: [frame: 'Fractal'] is top-level object for: [list item]
+16:58:38.296910 - SCRIPT UTILITIES: [list item] is in frame [frame: 'Fractal'] and dialog None
+16:58:38.296952 - SCRIPT UTILITIES: Looking for common ancestor of [list item] and [list item]
+16:58:38.297847 - SCRIPT UTILITIES: Common ancestor of [list item] and [list item] is [log]
+16:58:38.297862 - DEFAULT: Not in SayAll
+16:58:38.298027 - GENERATOR: _get_functional_role: list-item
+16:58:38.298185 - GENERATOR: _get_functional_role: log
+16:58:38.298204 - SPEECH GENERATOR: _generate_old_ancestors: []
+16:58:38.298221 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.298252 - SCRIPT UTILITIES: Looking for common ancestor of [list item] and [list item]
+16:58:38.299165 - SCRIPT UTILITIES: Common ancestor of [list item] and [list item] is [log]
+16:58:38.299180 - DEFAULT: Not in SayAll
+16:58:38.299213 - GENERATOR: _get_functional_role: log
+16:58:38.299246 - GENERATOR: _get_functional_role: list-item
+16:58:38.299258 - GTK: [list item] is deemed to be layout only
+16:58:38.299288 - GENERATOR: _get_functional_role: log
+16:58:38.299299 - GTK: [log] is deemed to be layout only
+16:58:38.299310 - SPEECH GENERATOR: _generate_new_ancestors: []
+16:58:38.299325 - GENERATOR: _generate_text_substring: []
+16:58:38.299333 - SPEECH GENERATOR: _generate_text_substring: []
+16:58:38.299348 - SPEECH GENERATOR: _generate_text_line: []
+16:58:38.299359 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.299375 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.299384 - GENERATOR: _generate_accessible_label: []
+16:58:38.299391 - SPEECH GENERATOR: _generate_accessible_label: []
+16:58:38.299411 - GENERATOR: _generate_accessible_name: []
+16:58:38.299418 - SPEECH GENERATOR: _generate_accessible_name: []
+16:58:38.299427 - GENERATOR: _generate_accessible_label_and_name: []
+16:58:38.299443 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [list item]
+16:58:38.299450 - DEFAULT: Not in SayAll
+16:58:38.299466 - SPEECH GENERATOR: _generate_accessible_role: []
+16:58:38.299488 - GENERATOR: _generate_state_checked_if_checkable: []
+16:58:38.299497 - SPEECH GENERATOR: _generate_state_checked_if_checkable: []
+16:58:38.299512 - SPEECH GENERATOR: _generate_state_unselected: []
+16:58:38.299532 - GENERATOR: _generate_state_expanded: []
+16:58:38.299540 - SPEECH GENERATOR: _generate_state_expanded: []
+16:58:38.299829 - AXComponent: [list item] is off-screen: False
+16:58:38.300514 - AXComponent: [panel] is off-screen: False
+16:58:38.300718 - AXComponent: The intersection of (x:731, y:52, width:722, height:60) and (x:731, y:52, width:738, height:64) is: (x:731, y:52, width:722, height:60)
+16:58:38.301282 - AXComponent: [panel] is off-screen: False
+16:58:38.301477 - AXComponent: The intersection of (x:731, y:52, width:722, height:60) and (x:731, y:52, width:738, height:64) is: (x:731, y:52, width:722, height:60)
+16:58:38.302036 - AXComponent: [toggle button: 'bgt lover’s avatar'] is off-screen: False
+16:58:38.302208 - AXComponent: The intersection of (x:731, y:52, width:42, height:42) and (x:731, y:52, width:738, height:64) is: (x:731, y:52, width:42, height:42)
+16:58:38.302872 - AXComponent: [panel] is off-screen: False
+16:58:38.303063 - AXComponent: The intersection of (x:785, y:52, width:668, height:19) and (x:731, y:52, width:738, height:64) is: (x:785, y:52, width:668, height:19)
+16:58:38.303612 - AXComponent: [label: 'bgt lover'] is off-screen: False
+16:58:38.303787 - AXComponent: The intersection of (x:785, y:52, width:60, height:19) and (x:731, y:52, width:738, height:64) is: (x:785, y:52, width:60, height:19)
+16:58:38.303931 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.304051 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.304581 - AXComponent: [label: 'Sent at 12∶02 PM'] is off-screen: False
+16:58:38.304757 - AXComponent: The intersection of (x:1405, y:52, width:48, height:19) and (x:731, y:52, width:738, height:64) is: (x:1405, y:52, width:48, height:19)
+16:58:38.304902 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.305025 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.305549 - AXComponent: [panel] is off-screen: False
+16:58:38.305751 - AXComponent: The intersection of (x:785, y:74, width:656, height:38) and (x:731, y:52, width:738, height:64) is: (x:785, y:74, width:656, height:38)
+16:58:38.306293 - AXComponent: [panel] is off-screen: False
+16:58:38.306484 - AXComponent: The intersection of (x:785, y:74, width:656, height:38) and (x:731, y:52, width:738, height:64) is: (x:785, y:74, width:656, height:38)
+16:58:38.307036 - AXComponent: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] is off-screen: False
+16:58:38.307227 - AXComponent: The intersection of (x:785, y:74, width:656, height:38) and (x:731, y:52, width:738, height:64) is: (x:785, y:74, width:656, height:38)
+16:58:38.307376 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.307501 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.308121 - AXComponent: Treating sizeless [panel] as onscreen
+16:58:38.308311 - AXComponent: The intersection of (x:785, y:112, width:668, height:0) and (x:731, y:52, width:738, height:64) is: (x:785, y:112, width:668, height:0)
+16:58:38.308944 - AXComponent: Treating [table] as offscreen due to size and no children
+16:58:38.309017 - SPEECH GENERATOR: SpeechGenerator._generate_toggle_button for [toggle button: 'bgt lover’s avatar'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.309037 - FOCUS MANAGER: Locus of focus is [list item]
+16:58:38.309063 - AXUtilitiesRelation: [toggle button: 'bgt lover’s avatar'] is labelled by: []
+16:58:38.309075 - GENERATOR: _generate_accessible_label: []
+16:58:38.309083 - SPEECH GENERATOR: _generate_accessible_label: []
+16:58:38.309099 - GENERATOR: _generate_accessible_name: [bgt lover’s avatar]
+16:58:38.309115 - SPEECH GENERATOR: default voice requested with language='None', dialect=''
+16:58:38.309164 - SPEECH GENERATOR: _generate_accessible_name: [bgt lover’s avatar, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.309209 - GENERATOR: _generate_accessible_label_and_name: [bgt lover’s avatar, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.309229 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [list item]
+16:58:38.309237 - DEFAULT: Not in SayAll
+16:58:38.309289 - SPEECH GENERATOR: system voice requested with language='None', dialect=''
+16:58:38.309332 - SPEECH GENERATOR: _generate_accessible_role: [toggle button, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.309355 - GENERATOR: _generate_state_expanded: []
+16:58:38.309364 - SPEECH GENERATOR: _generate_state_expanded: []
+16:58:38.309381 - GENERATOR: _generate_state_pressed: [not pressed]
+16:58:38.309389 - SPEECH GENERATOR: state voice requested with language='None', dialect=''
+16:58:38.309426 - SPEECH GENERATOR: _generate_state_pressed: [not pressed, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.309444 - GENERATOR: _generate_state_sensitive: []
+16:58:38.309453 - SPEECH GENERATOR: _generate_state_sensitive: []
+16:58:38.309464 - SPEECH GENERATOR: _generate_keyboard_mnemonic: []
+16:58:38.309553 - SPEECH GENERATOR: Results: [bgt lover’s avatar, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, toggle button, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, not pressed, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.309703 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.309825 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.309847 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.309861 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.309899 - SPEECH GENERATOR: SpeechGenerator._generate_label for [label: 'bgt lover'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.309920 - AXUtilitiesRelation: [label: 'bgt lover'] is labelled by: []
+16:58:38.309930 - GENERATOR: _generate_accessible_label: []
+16:58:38.309937 - SPEECH GENERATOR: _generate_accessible_label: []
+16:58:38.309954 - GENERATOR: _generate_text_substring: []
+16:58:38.309963 - SPEECH GENERATOR: _generate_text_substring: []
+16:58:38.309973 - GENERATOR: _generate_text_substring: []
+16:58:38.310096 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.310216 - AXText: Text of [label: 'bgt lover'] 'bgt lover'
+16:58:38.310236 - GENERATOR: _generate_text_content: [bgt lover]
+16:58:38.310247 - SPEECH GENERATOR: default voice requested with language='None', dialect=''
+16:58:38.310295 - SPEECH GENERATOR: _generate_text_content: [bgt lover, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.310425 - AXText: [label: 'bgt lover'] reports 9 characters.
+16:58:38.310545 - AXText: [label: 'bgt lover'] reports 0 selection(s).
+16:58:38.310559 - SPEECH GENERATOR: _generate_text_selection: []
+16:58:38.310575 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [list item]
+16:58:38.310583 - DEFAULT: Not in SayAll
+16:58:38.310598 - SPEECH GENERATOR: _generate_accessible_role: []
+16:58:38.310643 - SPEECH GENERATOR: Results: [bgt lover, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.310791 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.310921 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.310943 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.310958 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.310997 - SPEECH GENERATOR: SpeechGenerator._generate_label for [label: 'Sent at 12∶02 PM'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.311020 - AXUtilitiesRelation: [label: 'Sent at 12∶02 PM'] is labelled by: []
+16:58:38.311029 - GENERATOR: _generate_accessible_label: []
+16:58:38.311037 - SPEECH GENERATOR: _generate_accessible_label: []
+16:58:38.311052 - GENERATOR: _generate_text_substring: []
+16:58:38.311060 - SPEECH GENERATOR: _generate_text_substring: []
+16:58:38.311068 - GENERATOR: _generate_text_substring: []
+16:58:38.311196 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.311336 - AXText: Text of [label: 'Sent at 12∶02 PM'] '12∶02 PM'
+16:58:38.311358 - GENERATOR: _generate_text_content: [12∶02 PM]
+16:58:38.311370 - SPEECH GENERATOR: default voice requested with language='None', dialect=''
+16:58:38.311420 - SPEECH GENERATOR: _generate_text_content: [12∶02 PM, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.311547 - AXText: [label: 'Sent at 12∶02 PM'] reports 8 characters.
+16:58:38.311670 - AXText: [label: 'Sent at 12∶02 PM'] reports 0 selection(s).
+16:58:38.311685 - SPEECH GENERATOR: _generate_text_selection: []
+16:58:38.311702 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [list item]
+16:58:38.311710 - DEFAULT: Not in SayAll
+16:58:38.311725 - SPEECH GENERATOR: _generate_accessible_role: []
+16:58:38.311771 - SPEECH GENERATOR: Results: [12∶02 PM, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.311912 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.312040 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.312061 - AXUtilitiesRelation: [list item] is labelled by: []
+16:58:38.312075 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.312114 - SPEECH GENERATOR: SpeechGenerator._generate_label for [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] args: {'formatType': 'unfocused', 'includeContext': 'False', 'omitDescription': 'True'}
+16:58:38.312136 - AXUtilitiesRelation: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] is labelled by: []
+16:58:38.312146 - GENERATOR: _generate_accessible_label: []
+16:58:38.312153 - SPEECH GENERATOR: _generate_accessible_label: []
+16:58:38.312168 - GENERATOR: _generate_text_substring: []
+16:58:38.312176 - SPEECH GENERATOR: _generate_text_substring: []
+16:58:38.312185 - GENERATOR: _generate_text_substring: []
+16:58:38.312313 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.312444 - AXText: Text of [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map (...)
+16:58:38.312466 - GENERATOR: _generate_text_content: [it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...)]
+16:58:38.312478 - SPEECH GENERATOR: default voice requested with language='None', dialect=''
+16:58:38.312528 - SPEECH GENERATOR: _generate_text_content: [it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...), {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.312663 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 121 characters.
+16:58:38.312788 - AXText: [label: 'it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map this.name().await.ok()'] reports 0 selection(s).
+16:58:38.312802 - SPEECH GENERATOR: _generate_text_selection: []
+16:58:38.312818 - FOCUS MANAGER: Active mode: focus-tracking Object of interest: [list item]
+16:58:38.312826 - DEFAULT: Not in SayAll
+16:58:38.312841 - SPEECH GENERATOR: _generate_accessible_role: []
+16:58:38.312886 - SPEECH GENERATOR: Results: [it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...), {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]
+16:58:38.313056 - GENERATOR: _generate_descendants: [bgt lover’s avatar, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, toggle button, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, not pressed, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, bgt lover, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, 12∶02 PM, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...), {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE]
+16:58:38.313073 - SPEECH GENERATOR: _generate_position_in_list: []
+16:58:38.313085 - SPEECH GENERATOR: _generate_has_click_action: []
+16:58:38.313093 - SPEECH GENERATOR: _generate_has_details: []
+16:58:38.313101 - SPEECH GENERATOR: _generate_details_for: []
+16:58:38.313125 - AXUtilitiesRelation: [list item] is described by: []
+16:58:38.313135 - GENERATOR: _generate_accessible_description: []
+16:58:38.313143 - SPEECH GENERATOR: _generate_accessible_description: []
+16:58:38.313161 - SPEECH GENERATOR: system voice requested with language='None', dialect=''
+16:58:38.313203 - SPEECH GENERATOR: _generate_state_has_popup: [opens popup, [{'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]]
+16:58:38.313216 - SPEECH GENERATOR: _generate_tutorial: []
+16:58:38.313400 - SPEECH GENERATOR: Results: [PAUSE, PAUSE, bgt lover’s avatar, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, toggle button, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, not pressed, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, bgt lover, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, 12∶02 PM, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...), {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, PAUSE, PAUSE, opens popup, [{'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]]
+16:58:38.313882 - AXUtilitiesRelation: [list item] is controlled by [list item]: False
+16:58:38.313905 - AXUtilitiesRelation: [list item] is controlled by [list item]: False
+16:58:38.313910 - DEFAULT: Interrupting presentation
+16:58:38.314083 - BRAILLE: Kill flash message script.locus_of_focus_changed > default.locus_of_focus_changed > default.presentationInterrupt > braille.killFlash
+16:58:38.314921 - SPEECH: Speak [PAUSE, PAUSE, bgt lover’s avatar, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, toggle button, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, not pressed, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, bgt lover, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, 12∶02 PM, {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, it's basically something like.filter RelationType::LabeledBy||RelationType::DescribedBy.flat_map t (...), {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}, PAUSE, PAUSE, PAUSE, opens popup, [{'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}]], acss: None
+16:58:38.314970 - SPEECH OUTPUT: 'bgt lover’s avatar toggle button not pressed.' {'established': True, 'rate': 70.0, 'family': {'name': 'voxin default voice', 'gender': None, 'lang': 'en', 'dialect': 'US', 'variant': None}}
+16:58:38.314977 - SPEECH DISPATCHER: Speaking 'bgt lover’s avatar toggle button not pressed.' as string
+16:58:38.314999 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) speechdispatcherfactory.speak > speechdispatcherfactory._speak > ssml.markupText > script_manager.get_active_script
+16:58:38.316014 - SPEECH DISPATCHER: Speaking '<speak><mark name="0:3"/>bgt <mark name="4:11"/>lover’s <mark name="12:18"/>avatar <mark name="19:25"/>toggle <mark name="26:32"/>button <mark name="33:36"/>not <mark name="37:45"/>pressed.</speak>' 
+                  ORCA rate 70.0, pitch 5.0, volume 5.0, language en, punctuation: MOST
+                  SD rate 42, pitch 10, volume 100, language en-us
+16:58:38.316271 - SPEECH: New voice {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'} != active voice {'established': 'False'}
+16:58:38.316312 - SPEECH OUTPUT: 'bgt lover.' {'established': True, 'rate': 70.0, 'family': {'name': 'voxin default voice', 'gender': None, 'lang': 'en', 'dialect': 'US', 'variant': None}}
+16:58:38.316318 - SPEECH DISPATCHER: Speaking 'bgt lover.' as string
+16:58:38.316333 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) speechdispatcherfactory.speak > speechdispatcherfactory._speak > ssml.markupText > script_manager.get_active_script
+16:58:38.317317 - SPEECH DISPATCHER: Speaking '<speak><mark name="0:3"/>bgt <mark name="4:10"/>lover.</speak>' 
+                  ORCA rate 70.0, pitch 5.0, volume 5.0, language en, punctuation: MOST
+                  SD rate 42, pitch 10, volume 100, language en-us
+16:58:38.317488 - SPEECH: New voice {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'} != active voice {'established': 'False'}
+16:58:38.317508 - SPEECH OUTPUT: '12∶02 PM.' {'established': True, 'rate': 70.0, 'family': {'name': 'voxin default voice', 'gender': None, 'lang': 'en', 'dialect': 'US', 'variant': None}}
+16:58:38.317514 - SPEECH DISPATCHER: Speaking '12∶02 PM.' as string
+16:58:38.317529 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) speechdispatcherfactory.speak > speechdispatcherfactory._speak > ssml.markupText > script_manager.get_active_script
+16:58:38.318483 - SPEECH DISPATCHER: Speaking '<speak><mark name="0:5"/>12∶02 <mark name="6:9"/>PM.</speak>' 
+                  ORCA rate 70.0, pitch 5.0, volume 5.0, language en, punctuation: MOST
+                  SD rate 42, pitch 10, volume 100, language en-us
+16:58:38.318661 - SPEECH: New voice {'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'} != active voice {'established': 'False'}
+16:58:38.318682 - SPEECH OUTPUT: 'it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map this.name().await.ok()' {'established': True, 'rate': 70.0, 'family': {'name': 'voxin default voice', 'gender': None, 'lang': 'en', 'dialect': 'US', 'variant': None}}
+16:58:38.318686 - SPEECH DISPATCHER: Speaking 'it's basically something like .filter RelationType::LabeledBy||RelationType::DescribedBy .flat_map this.name().await.ok()' as string
+16:58:38.318710 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) speechdispatcherfactory.speak > speechdispatcherfactory._speak > ssml.markupText > script_manager.get_active_script
+16:58:38.319704 - SPEECH DISPATCHER: Speaking '<speak><mark name="0:4"/>it's <mark name="5:14"/>basically <mark name="15:24"/>something <mark name="25:29"/>like <mark name="30:37"/>.filter <mark name="38:88"/>RelationType::LabeledBy||RelationType::DescribedBy <mark name="89:98"/>.flat_map <mark name="99:121"/>this.name().await.ok()</speak>' 
+                  ORCA rate 70.0, pitch 5.0, volume 5.0, language en, punctuation: MOST
+                  SD rate 42, pitch 10, volume 100, language en-us
+16:58:38.319952 - SPEECH: Speak [{'established': 'True', 'family': "{'dialect': 'US', 'lang': 'en', 'name': 'voxin default voice', 'variant': 'None'}", 'rate': '70.0'}], acss: None
+16:58:38.319972 - SPEECH OUTPUT: 'opens popup' {'established': False, 'rate': 70.0, 'family': {'name': 'voxin default voice', 'gender': None, 'lang': 'en', 'dialect': 'US', 'variant': None}}
+16:58:38.319977 - SPEECH DISPATCHER: Speaking 'opens popup' as string
+16:58:38.319990 - SCRIPT MANAGER: Active script is: fractal (module=orca.scripts.toolkits.gtk.script) speechdispatcherfactory.speak > speechdispatcherfactory._speak > ssml.markupText > script_manager.get_active_script
+16:58:38.320944 - SPEECH DISPATCHER: Speaking '<speak><mark name="0:5"/>opens <mark name="6:11"/>popup</speak>' 
+                  ORCA rate 70.0, pitch 5.0, volume 5.0, language en, punctuation: MOST
+                  SD rate 42, pitch 10, volume 100, language en-us
+16:58:38.321079 - FOCUS MANAGER: Active window is [frame: 'Fractal'] script.locus_of_focus_changed > default.locus_of_focus_changed > default._save_focused_object_info > focus_manager.get_active_window
+16:58:38.321737 - SCRIPT UTILITIES: New selection for [list item] is '' (0, 0)
+TOTAL PROCESSING TIME: 0.0763
+^^^^^ PROCESS OBJECT EVENT object:state-changed:focused ^^^^^
