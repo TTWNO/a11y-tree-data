@@ -18,6 +18,7 @@ use std::fmt::{self, Display, Formatter};
 use std::fs::File;
 use std::collections::VecDeque;
 use std::time::Instant;
+use std::env;
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 
@@ -221,7 +222,8 @@ impl A11yNode {
 }
 
 fn main() -> Result<()> {
-  let data = File::open("yo.json")?;
+	let file_name = env::args().nth(1).expect("Must have at least one argument to binary");
+  let data = File::open(file_name)?;
   let a11y_node: A11yNode = serde_json::from_reader(data)?;
   let mut tree = Tree::from_root_node(a11y_node);
   let start = Instant::now();
