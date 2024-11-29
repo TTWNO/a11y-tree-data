@@ -8,16 +8,16 @@
 //!    Luuk van der Duim,
 //!    Tait Hoyem
 
-use atspi_common::{Role, ObjectRef};
+mod indextree_ext;
+use indextree_ext::{NodeIdExt, HasRole};
+mod role_set;
+use role_set::RoleSet;
+use atspi_common::Role;
 use serde::{Deserialize, Serialize};
 use std::fmt::{self, Display, Formatter};
-use std::io::Write;
 use std::fs::File;
 use std::collections::VecDeque;
 use std::time::Instant;
-
-mod role_set;
-use role_set::RoleSet;
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 
@@ -26,13 +26,18 @@ use indextree::{Arena, NodeId};
 #[derive(Debug, Deserialize, Serialize)]
 struct Node {
     role: Role,
-    roleset: Option<RoleSet>,
+		roleset: RoleSet,
+}
+impl HasRole for Node {
+	fn roleset(&self) -> RoleSet {
+		self.roleset
+	}
 }
 impl Node {
     fn from_a11y_node(node: A11yNode, tree: &mut Arena<Node>) -> NodeId {
         let new_node = Node {
             role: node.role,
-            roleset: None,
+						roleset: RoleSet::default(),
         };
         let id = tree.new_node(new_node);
         for child in node.children {
@@ -53,12 +58,12 @@ impl Tree {
         for leaf_id in self.root.descendants(&self.inner).collect::<Vec<_>>() {
             let leaf_roleset = {
                 let leaf = self.inner.get_mut(leaf_id).expect("Valid leaf node").get_mut();
-                leaf.roleset = Some(leaf.role.into());
-                leaf.roleset.clone().unwrap()
+                leaf.roleset |= leaf.role;
+								leaf.roleset
             };
-            for anc_id in leaf_id.ancestors(&self.inner).collect::<Vec<_>>() {
-                let mut anc = self.inner.get_mut(anc_id).expect("Valid ancestor node").get_mut();
-                anc.roleset = Some(anc.roleset.unwrap() | leaf_roleset);
+            for mut anc_id in leaf_id.ancestors(&self.inner).collect::<Vec<_>>() {
+                let anc = self.inner.get_mut(anc_id).expect("Valid ancestor node").get_mut();
+                anc.roleset |= leaf_roleset;
             }
         }
     }
@@ -83,6 +88,13 @@ impl Tree {
                 Some(node) => node.get().role == role
             })
     }
+    fn find_first_no_stack_ext(&self, role: Role) -> Option<NodeId> {
+        NodeIdExt::descendants_role(self.root, &self.inner, role.into())
+            .find(move |node_id| match self.inner.get(*node_id) {
+                None => false,
+                Some(node) => node.get().role == role
+            })
+    }
     fn find_first_roleset(&self, role: Role) -> Option<NodeId> {
         let roles: RoleSet = role.into();
         let mut stack = VecDeque::new();
@@ -95,8 +107,8 @@ impl Tree {
             id.children(&self.inner)
                 .rev()
                 .filter(|child_id| {
-                    let child = self.inner.get(*child_id).unwrap().get();
-                    child.roleset.unwrap().contains(roles)
+                    let child = self.inner.get(*child_id).unwrap();
+                    child.get().roleset.contains(roles)
                 })
                 .for_each(|good_child| {
                     stack.push_front(good_child);
@@ -196,7 +208,7 @@ impl A11yNode {
 			for (i, child) in this.children.iter().enumerate() {
 				stack.push((child, this.children.len(), i));
 			}
-			if this.children.len() > 0 {
+			if this.children.is_empty() {
 				max_depth += 1;
 				continue;
 			} else {
@@ -226,8 +238,12 @@ fn main() -> Result<()> {
       let startset = Instant::now();
       let firstset = tree.find_first_roleset(role);
       let endset = Instant::now();
+      let startfast = Instant::now();
+      let firstfast = tree.find_first_no_stack_ext(role);
+      let endfast = Instant::now();
       assert_eq!(first, firstset);
-      println!("\t{}: {} (first in {:?}/{:?})", role, many, end-start, endset-startset);
+      assert_eq!(firstset, firstfast);
+      println!("\t{}: {} (first in {:?}/{:?}/{:?})", role, many, end-start, endset-startset, endfast-startfast);
   }
   println!("Max depth: {}", tree.max_depth());
 
