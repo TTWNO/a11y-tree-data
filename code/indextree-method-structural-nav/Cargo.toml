@@ -1,0 +1,10 @@
+[package]
+name = "indextree-method-structural-nav"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+atspi-common = { version = "0.8.0", default-features = false }
+indextree = { version = "4.7.3", features = ["deser", "serde"], path = "../../../indextree/indextree/" }
+serde = "1.0.215"
+serde_json = "1.0.133"
