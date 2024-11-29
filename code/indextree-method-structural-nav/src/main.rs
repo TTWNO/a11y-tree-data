@@ -230,8 +230,8 @@ fn main() -> Result<()> {
   tree.build_rolesets();
   let end = Instant::now();
   println!("Took {:?} to build roleset index", end-start);
-  println!("{:?}", tree.nodes());
-  println!("{:?}", tree.leafs().count());
+  println!("Total nodes: {:?}", tree.nodes());
+  println!("Tree leafs: {:?}", tree.leafs().count());
   for role in tree.unique_roles() {
       let many = tree.how_many(role);
       let start = Instant::now();
@@ -245,7 +245,10 @@ fn main() -> Result<()> {
       let endfast = Instant::now();
       assert_eq!(first, firstset);
       assert_eq!(firstset, firstfast);
-      println!("\t{}: {} (first in {:?}/{:?}/{:?})", role, many, end-start, endset-startset, endfast-startfast);
+      println!("\t{}: {}", role, many);
+			println!("\t\tTime for standard traversal: {:?}", end-start);
+			println!("\t\tTime for roleset traversal: {:?}", endset-startset);
+			println!("\t\tTime for indextree extention: {:?}", endfast-startfast);
   }
   println!("Max depth: {}", tree.max_depth());
 
