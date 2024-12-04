@@ -287,3 +287,33 @@ mod tests {
 		assert!(less_roles.contains(some_roles));
 	}
 }
+
+use std::collections::BTreeSet;
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct RoleSetVecCount(Vec<(Role, usize)>, pub RoleSet);
+
+impl RoleSetVecCount {
+	fn from_role(role: Role) -> Self {
+		RoleSetVecCount(vec![(role, 1)], role.into())
+	}
+	pub fn contains(&self, other: RoleSet) -> bool {
+		self.1.contains(other)
+	}
+	pub fn add(&mut self, new: Role) {
+		self.1 |= new;
+		let Some(mut pair) = self.0.iter_mut()
+				.find(|role| role.0 == new) else {
+			self.0.push((new, 1));
+			return;
+		};
+		pair.1 += 1;
+	}
+}
+
+impl From<Role> for RoleSetVecCount {
+	fn from(r: Role) -> Self {
+		RoleSetVecCount::from_role(r)
+	}
+}
+
