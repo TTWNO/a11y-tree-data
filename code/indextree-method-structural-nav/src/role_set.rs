@@ -350,6 +350,16 @@ impl RoleSetVecCount {
     pub fn from_role(role: Role) -> Self {
         RoleSetVecCount(vec![(role, 1)], role.into())
     }
+
+    /// Return the number of items with a given role in all descendants.
+    #[must_use]
+    pub fn count(&self, role: Role) -> usize {
+        self.0
+            .iter()
+            .find_map(|item| if item.0 == role { Some(item.1) } else { None })
+            .unwrap_or_default()
+    }
+
     /// Checks against a `RoleSet`.
     /// ```
     /// use atspi_common::Role;
@@ -387,4 +397,9 @@ impl From<Role> for RoleSetVecCount {
     fn from(r: Role) -> Self {
         RoleSetVecCount::from_role(r)
     }
+}
+
+#[test]
+fn internal_frame() {
+    assert_eq!(Role::InternalFrame, Role::InternalFrame);
 }

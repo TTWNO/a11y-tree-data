@@ -28,16 +28,16 @@
 #![deny(clippy::all, clippy::pedantic, unsafe_code, missing_docs, rustdoc::all)]
 
 mod indextree_ext;
+mod validity;
 pub use indextree_ext::{HasRole, NodeIdExt};
 mod role_set;
 use atspi_common::Role;
-use rayon::iter::walk_tree;
+use rayon::iter::walk_tree_prefix;
 use rayon::prelude::*;
 pub use role_set::{RoleSet, RoleSetVecCount};
 use serde::{Deserialize, Serialize};
 use std::collections::VecDeque;
 use std::fmt::{self, Display, Formatter};
-use tap::Tap;
 
 use indextree::{Arena, NodeId};
 
@@ -107,11 +107,11 @@ pub trait TreeTraversal {
     /// Returns the maximum depth of the tree (computes in parallel).
     fn par_max_depth(&self) -> usize;
     /// Returns the unique roles in the tree (computed by visiting each node).
-    fn unique_roles(&self) -> Vec<Role>;
+    fn unique_roles(&self) -> RoleSet;
     /// Returns the unique roles in the tree (computed by visiting each node in parallel).
-    fn par_unique_roles(&self) -> Vec<Role>;
+    fn par_unique_roles(&self) -> RoleSet;
     /// Returns the unique roles in the tree (pre-computed).
-    fn unique_roles_roleset(&self) -> Vec<Role>;
+    fn unique_roles_roleset(&self) -> RoleSet;
     /// Returns the first in-order node with a given role.
     fn find_first(&self, role: Role) -> Option<&indextree::Node<Self::Node>>;
     /// Returns the first in-order node with a given role (computes in parallel).
@@ -188,16 +188,16 @@ impl TreeTraversal for TreeCount {
             .count()
     }
     fn how_many_roleset(&self, role: Role) -> usize {
-        NodeIdExt::descendants_role(self.root, &self.inner, role.into())
-            .filter(move |node_id| match self.inner.get(*node_id) {
-                None => false,
-                Some(node) => node.get().role == role,
-            })
-            .count()
+        self.inner
+            .get(self.root)
+            .expect("Valid root ID!")
+            .get()
+            .roleset
+            .count(role)
     }
     fn par_how_many_roleset(&self, role: Role) -> usize {
         let rs: RoleSet = role.into();
-        walk_tree(self.root, move |node_id| {
+        walk_tree_prefix(self.root, move |node_id| {
             // children which have no descendants with a given role are ignored
             node_id.children(&self.inner).filter(move |child| {
                 self.inner
@@ -235,49 +235,37 @@ impl TreeTraversal for TreeCount {
             .expect("A valid ancestors size!")
             + 1
     }
-    fn unique_roles(&self) -> Vec<Role> {
+    fn unique_roles(&self) -> RoleSet {
         self.root
             .descendants(&self.inner)
             .filter_map(move |node_id| self.inner.get(node_id))
             .map(|node| node.get().role)
-            .fold(Vec::new(), |mut roles, role| {
-                if !roles.contains(&role) {
-                    roles.push(role);
-                }
+            .fold(RoleSet::EMPTY, |mut roles, role| {
+                roles |= role;
                 roles
             })
     }
-    fn par_unique_roles(&self) -> Vec<Role> {
+    fn par_unique_roles(&self) -> RoleSet {
         self.inner
             .par_iter()
             .map(|node| node.get().role)
-            // parllel fold; one Vec per core
-            .fold(Vec::new, |mut roles, role| {
-                if !roles.contains(&role) {
-                    roles.push(role);
-                }
-                roles
-            })
-            // Vec<Vec<Role>> -> Iterator<Role>
-            .flatten_iter()
-            // Iterator<Role> -> Vec<Role>
-            .collect::<Vec<Role>>()
-            // take the value, sort in in place, deduplicate it in place;
-            // then, return it
-            .tap_mut(|vec| {
-                vec.par_sort_unstable_by(|r1, r2| (*r1 as u32).cmp(&(*r2 as u32)));
-                vec.dedup();
-            })
+            // parllel fold; one `RoleSet` per core
+            .fold(
+                || RoleSet::EMPTY,
+                |mut roles, role| {
+                    roles |= role;
+                    roles
+                },
+            )
+            .reduce(|| RoleSet::EMPTY, |a, b| a | b)
     }
-    fn unique_roles_roleset(&self) -> Vec<Role> {
+    fn unique_roles_roleset(&self) -> RoleSet {
         self.inner
             .get(self.root)
             .expect("Root is valid ID!")
             .get()
             .roleset
             .1
-            .role_iter()
-            .collect()
     }
     fn find_first(&self, role: Role) -> Option<&indextree::Node<NodeCount>> {
         self.root.descendants(&self.inner).find_map(move |node_id| {
@@ -301,7 +289,7 @@ impl TreeTraversal for TreeCount {
     }
     fn par_find_first_roleset(&self, role: Role) -> Option<&indextree::Node<NodeCount>> {
         let rs: RoleSet = role.into();
-        walk_tree(self.root, move |node_id| {
+        walk_tree_prefix(self.root, move |node_id| {
             // children which have no descendants with a given role are ignored
             node_id.children(&self.inner).filter(move |child| {
                 self.inner
@@ -459,7 +447,7 @@ impl TreeTraversal for Tree {
     }
     fn par_find_first_roleset(&self, role: Role) -> Option<&indextree::Node<Node>> {
         let rs: RoleSet = role.into();
-        walk_tree(self.root, move |node_id| {
+        walk_tree_prefix(self.root, move |node_id| {
             // children which have no descendants with a given role are ignored
             node_id.children(&self.inner).filter(move |child| {
                 self.inner
@@ -526,60 +514,45 @@ impl TreeTraversal for Tree {
             .expect("A valid ancestors size!")
             + 1
     }
-    fn unique_roles(&self) -> Vec<Role> {
+    fn unique_roles(&self) -> RoleSet {
         self.root
             .descendants(&self.inner)
             .filter_map(move |node_id| self.inner.get(node_id))
             .map(|node| node.get().role)
-            .fold(Vec::new(), |mut roles, role| {
-                if !roles.contains(&role) {
-                    roles.push(role);
-                }
+            .fold(RoleSet::EMPTY, |mut roles, role| {
+                roles |= role;
                 roles
             })
     }
-    fn par_unique_roles(&self) -> Vec<Role> {
+    fn par_unique_roles(&self) -> RoleSet {
         self.inner
             .par_iter()
             .map(|node| node.get().role)
-            // parllel fold; one Vec per core
-            .fold(Vec::new, |mut roles, role| {
-                if !roles.contains(&role) {
-                    roles.push(role);
-                }
-                roles
-            })
-            // Vec<Vec<Role>> -> Iterator<Role>
-            .flatten_iter()
-            // Iterator<Role> -> Vec<Role>
-            .collect::<Vec<Role>>()
-            // take the value, sort in in place, deduplicate it in place;
-            // then, return it
-            .tap_mut(|vec| {
-                vec.par_sort_unstable_by(|r1, r2| (*r1 as u32).cmp(&(*r2 as u32)));
-                vec.dedup();
-            })
+            // parllel fold; one `RoleSet` per core
+            .fold(
+                || RoleSet::EMPTY,
+                |mut roles, role| {
+                    roles |= role;
+                    roles
+                },
+            )
+            .reduce(|| RoleSet::EMPTY, |a, b| a | b)
     }
-    fn unique_roles_roleset(&self) -> Vec<Role> {
+    fn unique_roles_roleset(&self) -> RoleSet {
         self.inner
             .get(self.root)
             .expect("Root is valid ID!")
             .get()
             .roleset
-            .role_iter()
-            .collect()
     }
     fn how_many_roleset(&self, role: Role) -> usize {
         NodeIdExt::descendants_role(self.root, &self.inner, role.into())
-            .filter(move |node_id| match self.inner.get(*node_id) {
-                None => false,
-                Some(node) => node.get().role == role,
-            })
+            .filter(move |node_id| self.inner.get(*node_id).expect("Valid ID!").get().role == role)
             .count()
     }
     fn par_how_many_roleset(&self, role: Role) -> usize {
         let rs: RoleSet = role.into();
-        walk_tree(self.root, move |node_id| {
+        walk_tree_prefix(self.root, move |node_id| {
             // children which have no descendants with a given role are ignored
             node_id.children(&self.inner).filter(move |child| {
                 self.inner
@@ -622,12 +595,14 @@ const SINGLE_LINE: CharSet = CharSet {
     end_connector: '└',
 };
 
+#[cfg(not(coverage))]
 impl Display for A11yNode {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         self.fmt_with(f, SINGLE_LINE, &mut Vec::new())
     }
 }
 
+#[cfg(not(coverage))]
 impl A11yNode {
     // False positive from clippy
     #[allow(unused_variables)]
