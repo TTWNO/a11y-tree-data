@@ -10,7 +10,6 @@ itertools = "0.14.0"
 rayon = "1.10.0"
 serde = "1.0"
 serde_json = "1.0"
-tap = "1.0.1"
 
 [dev-dependencies]
 criterion = "0.5.1"
