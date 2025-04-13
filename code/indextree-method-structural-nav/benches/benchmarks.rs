@@ -44,6 +44,15 @@ fn seq_bench<M: Measurement, T: TreeTraversal>(mut g: BenchmarkGroup<'_, M>, t: 
             black_box(x);
         })
     });
+    g.bench_function("how_many_roleset", |b| {
+        b.iter(|| {
+            // technically black box knowledge here; the largest item ID = 129
+            let role_id = rand::random_range(0..=129);
+            let role = Role::try_from(role_id).expect("Valid role ID!");
+            let x = t.how_many_roleset(role);
+            black_box(x);
+        })
+    });
     g.bench_function("max_dpeth", |b| {
         b.iter(|| {
             let x = t.max_depth();
@@ -56,12 +65,9 @@ fn seq_bench<M: Measurement, T: TreeTraversal>(mut g: BenchmarkGroup<'_, M>, t: 
             black_box(x);
         })
     });
-    g.bench_function("find_first_roleset", |b| {
+    g.bench_function("unique_roles_roleset", |b| {
         b.iter(|| {
-            // technically black box knowledge here; the largest item ID = 129
-            let role_id = rand::random_range(0..=129);
-            let role = Role::try_from(role_id).expect("Valid role ID!");
-            let x = t.find_first_roleset(role);
+            let x = t.unique_roles_roleset();
             black_box(x);
         })
     });
@@ -71,6 +77,15 @@ fn seq_bench<M: Measurement, T: TreeTraversal>(mut g: BenchmarkGroup<'_, M>, t: 
             let role_id = rand::random_range(0..=129);
             let role = Role::try_from(role_id).expect("Valid role ID!");
             let x = t.find_first_roleset(role);
+            black_box(x);
+        })
+    });
+    g.bench_function("find_first_stack", |b| {
+        b.iter(|| {
+            // technically black box knowledge here; the largest item ID = 129
+            let role_id = rand::random_range(0..=129);
+            let role = Role::try_from(role_id).expect("Valid role ID!");
+            let x = t.find_first_stack(role);
             black_box(x);
         })
     });
@@ -97,6 +112,15 @@ fn par_bench<M: Measurement, T: TreeTraversal>(mut g: BenchmarkGroup<'_, M>, t: 
             let role_id = rand::random_range(0..=129);
             let role = Role::try_from(role_id).expect("Valid role ID!");
             let x = t.par_how_many(role);
+            black_box(x);
+        })
+    });
+    g.bench_function("par_how_many_roleset", |b| {
+        b.iter(|| {
+            // technically black box knowledge here; the largest item ID = 129
+            let role_id = rand::random_range(0..=129);
+            let role = Role::try_from(role_id).expect("Valid role ID!");
+            let x = t.par_how_many_roleset(role);
             black_box(x);
         })
     });

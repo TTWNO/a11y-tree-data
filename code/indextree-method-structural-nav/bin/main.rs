@@ -33,7 +33,7 @@ fn main() -> Result<()> {
     );
     println!("Total nodes: {:?}", tree.nodes());
     println!("Tree leafs: {:?}", tree.iter_leafs().count());
-    for role in tree.unique_roles() {
+    for role in tree.unique_roles().role_iter() {
         {
             let many = tree.how_many(role);
             let start = Instant::now();
