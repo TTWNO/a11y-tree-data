@@ -1,0 +1,193 @@
+<h1 id="report-on-findings-of-parallel-algorithms">Report on Findings of
+Parallel Algorithms</h1>
+<h2 id="goals">Goals</h2>
+<p>This project was created to assess different methods of traversing
+and storing tree data for use in assistive technologies like screen
+readers. Since screen readers often have to jump to the next in-order
+node with a given role, we wanted to explore methods to make this
+faster, given a directed asynclic graph (tree) with accessibility
+inforamtion (role) and its children. While this <em>does</em> have
+general applicability to other role-based traversals, this is the
+applied reasoning for the project.</p>
+<h2 id="experiment">Experiment</h2>
+<p>Here is a list of methods that were benchmarked to understand the
+performance implications of each implementaion. We ran on real data from
+a large web page—the one-page HTML specification—and <em>much</em>
+larger synthetic data to understand the performance characteristics of
+various approaches with increasingly large sizes. Additionally, there
+are two implementations for all functions, one which only stores a
+role-based bitset, and another that stores both a bitset, and <em>the
+number of nodes with that role in its descendants</em>. These can be
+thought of as <code>TreeNode { bitset }</code> and
+<code>TreeCountNode { bitset, Vec&lt;(Role, uszie)&gt; }</code></p>
+<p>Here, we will list each function, along with links to its
+documentation, performance results with both real and synthetic data (x)
+and performance results across the two styles of storing
+bitset-propogation (y). Additionally, notes will be given when a
+function performs particularily poorly or well, and additional details
+as needed.</p>
+<p>One interesting result to note before reading the details: the
+performance uplift is relatively independent of the size; the
+non-synthetic data appears to be large enough to get proportional
+benefits.</p>
+<ul>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.iter_leafs"><code>iter_leafs</code></a>
+<ul>
+<li>Iterate through all leaf nodes.</li>
+<li><code>O(n)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_iter_leafs"><code>par_iter_leafs</code></a>
+<ul>
+<li>Compared to <code>iter_leafs</code>, about an 80% improvement to
+performance and 50% decrease in standard deviation.</li>
+<li><code>O(n/p)</code> where <code>p</code> is number of
+processors.</li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.how_many"><code>how_many(role)</code></a>
+<ul>
+<li>Counts the number of nodes with a given role.</li>
+<li><code>O(n)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_how_many"><code>par_how_many(role)</code></a>
+<ul>
+<li>Compared to <code>how_many</code>, increase in performance of 95%,
+reduction in standard deviation by 80%.</li>
+<li><code>O(n/p)</code> where <code>p</code> is number of
+processors.</li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.how_many_roleset"><code>how_many_roleset(role)</code></a>
+<ul>
+<li>For the variety of tree that stores both the role and the count for
+each of them in all subtrees, this was extemely fast; constant in about
+7 nanoseconds. <code>O(1)</code></li>
+<li>For the tree that doesn’t store this extra data: there is still a
+speedup of 2 orders of magnitude (99%). Still <code>O(n)</code> worst
+case.</li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_how_many_roleset"><code>par_how_many_roleset(role)</code></a>
+<ul>
+<li>Compared to <code>how_many_roleset</code> (non-counting nodes only),
+about a 60% performance increase. <code>O(n/p)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.max_depth"><code>max_depth</code></a>
+<ul>
+<li>Find the depth of the deepest node. <code>O(n)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_max_depth"><code>par_max_depth</code></a>
+<ul>
+<li>Compared to <code>max_depth</code>, 75% performance increase.
+<code>O(n/p)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.unique_roles"><code>unique_roles</code></a>
+<ul>
+<li>Get a list of all unique roles in the tree. <code>O(n)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_unique_roles"><code>par_unique_roles</code></a>
+<ul>
+<li>Compared to <code>unique_roles</code>, 90% performance increase.
+<code>O(n/p)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.unique_roles_roleset"><code>unique_roles_roleset</code></a>
+<ul>
+<li>For both trees this is instant: <code>O(1)</code> in about 10
+nanoseconds.</li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.find_first"><code>find_first</code></a>
+<ul>
+<li><code>O(n)</code></li>
+<li>Synthetic data had <em>much</em> shorter processing times.</li>
+<li>However, this is just a coincidence; a larger variety of roles are
+closer to the root, and the benchmarks only meassure from the root
+node.</li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_find_first"><code>par_find_first</code></a>
+<ul>
+<li>Compared to <code>find_first</code>, there was a fairly consistent
+50% performance improvement, and 50% decrease in standard deviation.
+<code>O(n)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.find_first_roleset"><code>find_first_roleset</code></a>
+<ul>
+<li>Compared to <code>find_first</code>, pruning subtress without the
+searched-for role increases performance by about 2 orders of magnitude
+(99%; <code>O(n)</code>)</li>
+<li>And shrinks the standard deviation by one order of magnitude
+(90%)</li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.par_find_first_roleset"><code>par_find_first_roleset</code></a>
+<ul>
+<li>Compared to <code>find_first_roleset</code>, consistent performance
+improvements of about 50%.</li>
+<li>And a standard deviation decrease of about 70%.</li>
+<li><code>O(n/p)</code></li>
+</ul></li>
+<li><a
+href="./target/doc/indextree_method_structural_nav/trait.TreeTraversal.html#tymethod.find_first_stack"><code>find_first_stack</code></a>
+<ul>
+<li>Since this uses a stack-based push/pop algorithm, it’s inherently
+sequential. It uses the <code>roleset</code> advantage.</li>
+<li>Compared to <code>find_first_roleset</code>, it increases
+performance by about 15%, and improves standard deviation by about the
+same amount.</li>
+<li><code>O(n)</code></li>
+</ul></li>
+</ul>
+<p>You can also access <a
+href="./target/criterion/report/index.html">detailed performance reports
+here</a>.</p>
+<p>Interestingly, despite almost all algorithms performing similarily in
+asymptotic time, there are very signficant gains to be made by both
+parallelizing and structuring the data to compute things faster at
+runtime. This shows that while asymtotic time is real and a useful lense
+to use on <em>massive</em> datasets, crunching through hundreds of mega
+(or giga-) bytes is completely reasonable with some clever,
+non-asymtotic speedups. This conclusion is pretty similar to
+Quicksort’s; the asymptotic time is still <code>O(n^2)</code>, but in
+practice it is close to <code>O(n log n)</code> for nearly all real
+data.</p>
+<h2 id="further-work">Further Work</h2>
+<ul>
+<li>Screen readers need to write to their tree <em>much</em> more often
+than they need to read from it. There should be additional benchmarks
+for:
+<ul>
+<li>Removing items (and propogating the role changes through counting
+and non-counting trees)</li>
+<li>Adding items (and propogating the role changes though counting and
+non-counting trees)</li>
+</ul></li>
+<li>And equivelant benchmarks for parallel/concurrent access and
+modification; try using two strategies for keeping the tree in tact
+<ul>
+<li><a
+href="https://doc.rust-lang.org/std/sync/struct.RwLock.html"><code>RwLock&lt;Tree&gt;</code></a></li>
+<li><a
+href="https://docs.rs/evmap/latest/evmap/struct.ReadHandle.html"><code>ReadHandle&lt;Tree&gt;</code></a>
+and <a
+href="https://docs.rs/evmap/latest/evmap/struct.WriteHandle.html"><code>WriteHandle&lt;Tree&gt;</code></a>
+from the <code>evmap</code> project.
+<ul>
+<li>This allows for <code>ev</code>entual consistency while allowing
+<em>multiple reads and multiple write to proceeed in parallel</em>, with
+explicit synchronization.</li>
+</ul></li>
+</ul></li>
+<li>Test against other traditional “caching” mechanisms.</li>
+<li>Integrate into the <a href="https://odilia.app/">Odilia screen
+reader</a></li>
+</ul>
